@@ -1,0 +1,2 @@
+installinghost ansible_host=192.168.178.43
+dockerdeployhost ansible_port=8000 ansible_host=192.168.178.43

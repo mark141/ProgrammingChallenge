@@ -1,0 +1,11 @@
+---
+- hosts: installinghost
+
+  become: yes
+  tasks:
+  
+  - name: stop all docker
+    shell: "docker stop $(docker ps -a -q)"
+
+  - name: remove all docker
+    shell: "docker rm $(docker ps -a -q)"
