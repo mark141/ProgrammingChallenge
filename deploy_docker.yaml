@@ -1,5 +1,11 @@
 ---
 - hosts: installinghost
+
+  # Port variable
+  # --
+  # 
+  # TODO: Set the port_number to your desired port.
+  #
   vars:
     port_number: 3000
   
@@ -58,8 +64,17 @@
         - docker
         - docker-compose
 
+  # Pulls the Docker Tutorial
+  # --
+  # 
+  # TODO: Make sure you replace the repository with the one you want 
+  #       to deploy!
+  #
+  # This docker repository is avaivable for public here:
+  # https://hub.docker.com/r/mark141/getting-started
+  #
   - name: docker pull
     shell: "docker pull mark141/getting-started"
-    
+      
   - name: deploy docker
     shell: "docker run -dp {{port_number}}:{{port_number}} mark141/getting-started"
